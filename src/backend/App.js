@@ -24,14 +24,14 @@ mongoose
 require("./users");
 
 const User = mongoose.model("UserInfo");
-app.get("/users", async (req, res) => {
-  const { port, addr, topic} = req.body;
+app.get("", async (req, res) => {
+  const { host,clientId, port, username, password} = req.body;
     await User.create({
-      addr,
-      port,
-      clid,
-      username,
-      passwd
+    host,
+    clientId,
+    port,
+    username,
+    password
     });
     res.send({ status: "ok" });
 });

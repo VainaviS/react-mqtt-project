@@ -41,7 +41,7 @@ const Connection = ({ connect, disconnect, connectBtn }) => {
   const handleDisconnect = () => {
     disconnect();
   };
-
+  
   const ConnectionForm = (
     <Form
       layout="vertical"

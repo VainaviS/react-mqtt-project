@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
-
 const UserScehma = new mongoose.Schema(
   {
-    addr:String,
-    port:String,
-    clid:String,
-    username:String,
-    passwd:String,
+    host: String,
+     clientId:String,
+     port:String,
+     username:String,
+     password:String,
   },
   {
     collection: "UserInfo",
   }
 );
-
 mongoose.model("UserInfo", UserScehma);
