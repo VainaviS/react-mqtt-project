@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 var nodemailer = require("nodemailer");
 
-const mongoUrl = "mongodb+srv://vainavi:vainaviP@cluster0.zljglwn.mongodb.net/?retryWrites=true&w=majority";
+const mongoUrl = "mongodb+srv://admin:vainavi@cluster0.9avwt4l.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
   .connect(mongoUrl, {
@@ -21,15 +21,17 @@ mongoose
   })
   .catch((e) => console.log(e));
 
-require("./userDetails");
+require("./users");
 
 const User = mongoose.model("UserInfo");
-app.post("/register", async (req, res) => {
+app.get("/users", async (req, res) => {
   const { port, addr, topic} = req.body;
     await User.create({
-      port,
       addr,
-      topic
+      port,
+      clid,
+      username,
+      passwd
     });
     res.send({ status: "ok" });
 });

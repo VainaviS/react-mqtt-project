@@ -2,9 +2,11 @@ const mongoose = require("mongoose");
 
 const UserScehma = new mongoose.Schema(
   {
-    port: String,
-    addr: String, //{ type: String, unique: true }
-    topic: String,
+    addr:String,
+    port:String,
+    clid:String,
+    username:String,
+    passwd:String,
   },
   {
     collection: "UserInfo",
