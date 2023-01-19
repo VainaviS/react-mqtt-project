@@ -4,7 +4,7 @@ import { Card, Button, Form, Input, Row, Col } from 'antd';
 const Connection = ({ connect, disconnect, connectBtn }) => {
   const [form] = Form.useForm();
   const record = {
-    host: '192.168.30.114',
+    host: '192.168.30.114',//edit your own ip address here
     clientId: `mqttjs_ + ${Math.random().toString(16).substr(2, 8)}`,
     port: 9001,
     username: 'admin',
